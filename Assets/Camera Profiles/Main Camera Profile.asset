@@ -1393,7 +1393,7 @@ MonoBehaviour:
     value: 1
   shutterAngle:
     overrideState: 1
-    value: 360
+    value: 260
   sampleCount:
     overrideState: 1
     value: 10
