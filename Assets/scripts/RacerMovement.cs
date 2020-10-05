@@ -32,13 +32,13 @@ public class RacerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            racermodel.Rotate (new Vector3(0, 0, 1) * Time.deltaTime * speed, Space.World); 
+            racermodel.Rotate (new Vector3(0, 0, 1) * Time.deltaTime * speed *0.5f, Space.World); 
             racer.AddForce (-transform.right * dodge);
         }
 
          if (Input.GetKey(KeyCode.D))
         {
-            racermodel.Rotate (new Vector3(0, 0, -1) * Time.deltaTime * speed, Space.World);
+            racermodel.Rotate (new Vector3(0, 0, -1) * Time.deltaTime * speed *0.5f, Space.World);
             racer.AddForce (transform.right * dodge);
         }
 
