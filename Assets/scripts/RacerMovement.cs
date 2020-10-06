@@ -7,7 +7,10 @@ public class RacerMovement : MonoBehaviour
     
     public Rigidbody racer;
     public Transform racermodel;
-  
+
+    public GameObject teleportexit;
+    public GameObject racerobject;
+      
     public float speed;
     public float boost;
     public float dodge;
@@ -30,27 +33,22 @@ public class RacerMovement : MonoBehaviour
              racer.AddForce (transform.forward * speed);
         }
 
-       /*  if (Input.GetKey(KeyCode.W))
+          //Would this be better with rigidbody postion?
+        if (Input.GetKeyDown(KeyCode.W))
         {
-             racer.AddForce (transform.up * lift);
+             racerobject.transform.position = teleportexit.transform.position ;
         }
 
-          if (Input.GetKey(KeyCode.S))
-        {
-             racer.AddForce (-transform.up * lift);
-        }  */
-
+      
         if (Input.GetKey(KeyCode.A))
         {
              racer.AddForce (-transform.right * dodge);
-            if(racermodel.rotation.z <=35 )
+             
+            if(racermodel.localEulerAngles.z <=35f )
             {
-              Debug.Log ("I can turn");
+              
                racermodel.Rotate (new Vector3(0, 0, 1) * Time.deltaTime * rotate , Space.World); 
-            } else
-             {
-                     Debug.Log ("no more turn for me");
-            }
+            } 
         }
         
         if (Input.GetKey(KeyCode.A) == false && racermodel.rotation.z >0)
@@ -62,9 +60,10 @@ public class RacerMovement : MonoBehaviour
          if (Input.GetKey(KeyCode.D))
         {
                racer.AddForce (transform.right * dodge);
-               if (racermodel.rotation.z >=-35)
+               // 325 due to way returns angle does not do as minus z as shown inspector
+               if (racermodel.localEulerAngles.z >325f) 
                {
-               racermodel.Rotate (new Vector3(0, 0, -1) * Time.deltaTime * rotate, Space.World);
+                  racermodel.Rotate (new Vector3(0, 0, -1) * Time.deltaTime * rotate, Space.World);
                }
         }
 
