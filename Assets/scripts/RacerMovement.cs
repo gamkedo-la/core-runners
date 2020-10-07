@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class RacerMovement : MonoBehaviour
 {
     
@@ -16,17 +16,17 @@ public class RacerMovement : MonoBehaviour
     public float dodge;
     // public float lift;
     public float rotate;
-  
+   
+    public LeftButtonPress leftbutton;
+    public RightButtonPress rightbutton;
+    public BoostButtonPress boostbutton;
 
-    
-    
-    
     void FixedUpdate()
     {
        
            
        
-         if (Input.GetKey(KeyCode.Space))
+         if (Input.GetKey(KeyCode.Space) || boostbutton.boostbuttonPressed == true)
         {
              racer.AddForce (transform.forward * boost * speed);
         } else {
@@ -40,7 +40,7 @@ public class RacerMovement : MonoBehaviour
         }
 
       
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || leftbutton.leftbuttonPressed == true)
         {
              racer.AddForce (-transform.right * dodge);
              
@@ -51,13 +51,13 @@ public class RacerMovement : MonoBehaviour
             } 
         }
         
-        if (Input.GetKey(KeyCode.A) == false && racermodel.rotation.z >0)
+        if (Input.GetKey(KeyCode.A) == false && racermodel.rotation.z >0 && leftbutton.leftbuttonPressed == false && racermodel.rotation.z >0 )
         {
             racermodel.Rotate (new Vector3(0, 0, -1) * Time.deltaTime * rotate , Space.World); 
         }
 
 
-         if (Input.GetKey(KeyCode.D))
+         if (Input.GetKey(KeyCode.D) || rightbutton.rightbuttonPressed == true)
         {
                racer.AddForce (transform.right * dodge);
                // 325 due to way returns angle does not do as minus z as shown inspector
@@ -67,7 +67,7 @@ public class RacerMovement : MonoBehaviour
                }
         }
 
-        if (Input.GetKey(KeyCode.D) == false && racermodel.rotation.z <0)   
+        if (Input.GetKey(KeyCode.D) == false && racermodel.rotation.z <0 && rightbutton.rightbuttonPressed == false && racermodel.rotation.z <0 )   
         {
             racermodel.Rotate (new Vector3(0, 0, 1) * Time.deltaTime * rotate , Space.World); 
         }
