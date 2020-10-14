@@ -9,13 +9,15 @@ public class EngineSoundSpeed : MonoBehaviour
 
     public BoostButtonPress boostButton;
 
-    float t = 0;
+    public float t = 1;
 
     public float p = 1;
-    public float min = 1.0f;
-    public float max = 1.2f;
+    public float min;
+    public float max;
 
-    public bool reset;
+    float temp = 0.0f;
+
+    //public bool reset;
 
 
     // Start is called before the first frame update
@@ -27,30 +29,57 @@ public class EngineSoundSpeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (boostButton.boostbuttonPressed == true)
+        if (Input.GetButtonDown("Jump"))
         {
 
-            //if(p == min) { t = 0; }
+            temp = max;
+            max = min;
+            min = temp;
 
-            //p = Mathf.Lerp(min, max, t);
-            //t += Time.deltaTime;
+            if (t > 1) { t = 1; }
 
-            p = max;
+            t = 1 - t;
 
         }
-        if (boostButton.boostbuttonPressed == false)
+
+        if (Input.GetButtonUp("Jump"))
         {
-            // if (p == max) { t = 0; }
 
-            //engine.pitch = Mathf.Lerp(max, min, t);
-            //t += Time.deltaTime;
+            temp = max;
+            max = min;
+            min = temp;
 
-            p = min;
+            if (t > 1) { t = 1; }
+
+            t = 1 - t;
 
         }
+        if (t < 1.0f)
+        {
+            t += Time.deltaTime;
+        }
+        p = Mathf.Lerp(max, min, t);
+
+        
 
         engine.pitch = p;
 
     }
+
+
+    public void Flip()
+    {
+        temp = max;
+        max = min;
+        min = temp;
+
+        if (t > 1) { t = 1; }
+
+        t = 1 - t;
+
+
+    }
+
+
+    
 }
