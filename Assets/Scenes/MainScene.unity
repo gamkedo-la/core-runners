@@ -15691,6 +15691,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engine: {fileID: 1019741012}
+  boostButton: {fileID: 520043990}
+  p: 1
+  min: 1
+  max: 1.2
+  reset: 0
 --- !u!1001 &1030997572
 PrefabInstance:
   m_ObjectHideFlags: 0
