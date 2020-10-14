@@ -32,26 +32,14 @@ public class EngineSoundSpeed : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
 
-            temp = max;
-            max = min;
-            min = temp;
-
-            if (t > 1) { t = 1; }
-
-            t = 1 - t;
+            Flip();
 
         }
 
         if (Input.GetButtonUp("Jump"))
         {
 
-            temp = max;
-            max = min;
-            min = temp;
-
-            if (t > 1) { t = 1; }
-
-            t = 1 - t;
+            Flip();
 
         }
         if (t < 1.0f)
