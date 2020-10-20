@@ -4,6 +4,15 @@ using UnityEditor.Build.Reporting;
 
 public class BuildScript : MonoBehaviour
 {
+    
+    [MenuItem("Build/Build All")]
+    public static void BuildAll()
+    {
+        AndroidBuild();
+        PCBuild();
+        WebGLBuild();
+    }
+
     [MenuItem("Build/Build Android")]
     public static void AndroidBuild()
     {
