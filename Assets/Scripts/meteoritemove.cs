@@ -8,6 +8,6 @@ public class meteoritemove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         transform.Translate(0, -Time.deltaTime * 350f, 0);
+         transform.Translate(-Time.deltaTime * 250f, -Time.deltaTime * 250f, 0);
     }
 }
