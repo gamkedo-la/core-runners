@@ -17,7 +17,7 @@ public class BuildScript : MonoBehaviour
     public static void AndroidBuild()
     {
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-        buildPlayerOptions.scenes = new[] { "Assets/Scenes/MainScene.unity"};
+        buildPlayerOptions.scenes = new[] { "Assets/Scenes/Level 1.unity"};
         buildPlayerOptions.locationPathName = "Build//android/AndroidBuild.apk";
         buildPlayerOptions.target = BuildTarget.Android;
         buildPlayerOptions.options = BuildOptions.None;
