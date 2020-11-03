@@ -34,7 +34,6 @@ public class RacerMovement : MonoBehaviour
         {
             if (canBoost)
             {
-                print("here");
                 camera.SetBool("isBoosting", true);
                 currentBoostValue -= Time.deltaTime;
 
