@@ -21,20 +21,34 @@ public class RacerMovement : MonoBehaviour
     public RightButtonPress rightbutton;
     public BoostButtonPress boostbutton;
 
+    //Boost
+    bool canBoost;
+    public Slider boostUI;
+    public int maxBoost = 10;
+    public static float currentBoostValue = 5;
+    public Animator camera;
+
     void FixedUpdate()
     {
-       
-           
-       
-         if (Input.GetKey(KeyCode.Space) || boostbutton.boostbuttonPressed == true)
+        if (Input.GetKey(KeyCode.Space) || boostbutton.boostbuttonPressed == true)
         {
-             racer.AddForce (transform.forward * boost * speed);
-        } else {
-             racer.AddForce (transform.forward * speed);
+            if (canBoost)
+            {
+                print("here");
+                camera.SetBool("isBoosting", true);
+                currentBoostValue -= Time.deltaTime;
+
+                racer.AddForce(transform.forward * boost * speed);
+            }
+            else
+            {
+                camera.SetBool("isBoosting", false);
+                racer.AddForce(transform.forward * speed);
+            }
         }
 
-          //Would this be better with rigidbody postion?
-        if (Input.GetKeyDown(KeyCode.W))
+            //Would this be better with rigidbody postion?
+            if (Input.GetKeyDown(KeyCode.W))
         {
              racerobject.transform.position = teleportexit.transform.position ;
         }
@@ -72,5 +86,21 @@ public class RacerMovement : MonoBehaviour
             racermodel.Rotate (new Vector3(0, 0, 1) * Time.deltaTime * rotate , Space.World); 
         }
 
+
+        boostUI.value = (currentBoostValue / maxBoost);
+    }
+
+    private void Update()
+    {
+        if (currentBoostValue >= 0)
+        {
+            canBoost = true;
+        }
+        else
+        {
+            camera.SetBool("isBoosting", false);
+            camera.SetBool("outOfBoost", true);
+            canBoost = false;
+        }
     }
 }
