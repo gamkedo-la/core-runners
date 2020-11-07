@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class RacerMovement : MonoBehaviour
 {
     
@@ -24,9 +25,15 @@ public class RacerMovement : MonoBehaviour
     //Boost
     bool canBoost;
     public Slider boostUI;
+    public TMP_Text boostText;
     public int maxBoost = 10;
     public static float currentBoostValue = 5;
     public Animator camera;
+
+    // Velocity
+    public float velocity;
+    public TMP_Text velocityText;
+    public Slider velocityUI;
 
     void FixedUpdate()
     {
@@ -87,6 +94,11 @@ public class RacerMovement : MonoBehaviour
 
 
         boostUI.value = (currentBoostValue / maxBoost);
+        boostText.text = (boostUI.value * 100).ToString("0") + "%";
+
+        velocity = racer.velocity.magnitude;
+        velocityUI.value = racer.velocity.magnitude;
+        velocityText.text = velocity.ToString("0");        
     }
 
     private void Update()
