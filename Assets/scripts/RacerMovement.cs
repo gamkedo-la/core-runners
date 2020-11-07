@@ -30,6 +30,7 @@ public class RacerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+                racer.AddForce(transform.forward * speed);
         if (Input.GetKey(KeyCode.Space) || boostbutton.boostbuttonPressed == true)
         {
             if (canBoost)
@@ -42,7 +43,6 @@ public class RacerMovement : MonoBehaviour
             else
             {
                 camera.SetBool("isBoosting", false);
-                racer.AddForce(transform.forward * speed);
             }
         }
 
