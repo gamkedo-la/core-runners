@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2256189058555755166}
   - component: {fileID: 616432806563801060}
   - component: {fileID: 616432806563801061}
+  - component: {fileID: 5292788084178325504}
   m_Layer: 13
   m_Name: BoostPowerUp
   m_TagString: Untagged
@@ -110,3 +111,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoostIncrease: 5
   rotationSpeed: 5
+--- !u!114 &5292788084178325504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310585159155522379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35998888d78f67140aeb89926680cf84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 2dcfa59f51b36a04184178f03821f75d, type: 3}
+  - {fileID: 8300000, guid: 1c58894674afbc04caf16b0d89434d22, type: 3}
+  - {fileID: 8300000, guid: e445565df789d7549bd92c6da6acb046, type: 3}
+  - {fileID: 8300000, guid: c44fdfd7ab4e9154a89ec89e8bf9b0dc, type: 3}
+  - {fileID: 8300000, guid: 1631c1ac3d86aa94383fb3964ce7d434, type: 3}
+  source: {fileID: 0}
+  next: 0
