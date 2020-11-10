@@ -59,6 +59,7 @@ public class MusicHandler : MonoBehaviour
 
         var loopMusic = GetNextSource();
         loopMusic.clip = LoopMusic;
+        loopMusic.loop = true;
         loopMusic.PlayScheduled(nextStartTime);
     }
 
