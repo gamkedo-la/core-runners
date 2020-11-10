@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartMusic: {fileID: 8300000, guid: 67cf0a1561e057643998dfa58ae30997, type: 3}
-  LoopMusic: {fileID: 8300000, guid: 5b9c652b3ef0e7b418774da50a2db37b, type: 3}
+  LoopMusic: {fileID: 8300000, guid: 54b5dbb10281c844f85004fd77dd8db2, type: 3}
   OutMusic: {fileID: 8300000, guid: f2b0d618cdb7ad2498a39ab19dba0762, type: 3}
   sources: []
   sourcesToCreate: 3
