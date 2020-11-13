@@ -19,7 +19,7 @@ public class AudioOnTrigger : MonoBehaviour
         //  source = controller.GetNextSource();
 
         if (musicTriggerReader == null)
-            musicTriggerReader = FindObjectOfType<MusicTriggerReader>();
+            musicTriggerReader = FindObjectOfType<MusicTriggerReader>(); // TODO make music objects singleton
 
     }
 

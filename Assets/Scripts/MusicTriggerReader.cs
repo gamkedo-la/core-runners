@@ -53,7 +53,7 @@ public class MusicTriggerReader : MonoBehaviour
             ReportEvent(data.beats[currentBeat]);
             currentBeat++;
 
-            if (currentBeat == data.beats.Count)
+            if (currentBeat == data.beats.Count) //TODO The loop needs to be fixed so it's in sync
                 ResetBeatCount();
         }
         //else
