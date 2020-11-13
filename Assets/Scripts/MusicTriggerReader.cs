@@ -25,7 +25,7 @@ public class MusicTriggerReader : MonoBehaviour
     }
 
     public int GetEventFlag() { return eventFlag; }
-
+    public MusicData GetCurrentData() { return data; }
     public void SetMusicData(MusicData data)
     {
         this.data = data;

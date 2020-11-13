@@ -47,11 +47,15 @@ MonoBehaviour:
   StartMusic: {fileID: 8300000, guid: 67cf0a1561e057643998dfa58ae30997, type: 3}
   LoopMusic: {fileID: 8300000, guid: 54b5dbb10281c844f85004fd77dd8db2, type: 3}
   OutMusic: {fileID: 8300000, guid: f2b0d618cdb7ad2498a39ab19dba0762, type: 3}
+  StartMusicData: {fileID: 0}
+  LoopMusicData: {fileID: 0}
+  OutMusicData: {fileID: 0}
   sources: []
   sourcesToCreate: 3
   playIntro: 0
   bpm: 120
   lengthOfStartBars: 72
+  musicTriggerReader: {fileID: 0}
 --- !u!114 &9082050966491860229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,3 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f5871a30a24944095c5304b217fe2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  currentBeat: 0
+  startReading: 0
+  eventFlag: 0

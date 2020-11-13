@@ -4715,6 +4715,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 2037976417}
+--- !u!114 &2041666931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1726964920779283763, guid: b78953bd62871f446b6d11eb4da1c66c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4532534866774334855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f5871a30a24944095c5304b217fe2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2051535281
 GameObject:
   m_ObjectHideFlags: 0
@@ -5379,6 +5391,11 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1894076593}
+    - target: {fileID: 5292788084178325504, guid: a507d44cc773a5f41a0095993f54c5e2,
+        type: 3}
+      propertyPath: musicTriggerReader
+      value: 
+      objectReference: {fileID: 2041666931}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a507d44cc773a5f41a0095993f54c5e2, type: 3}
 --- !u!1001 &3408291163636998513

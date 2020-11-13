@@ -10,6 +10,9 @@ public class MusicEvent
     [SerializeField] GameObject objectToTrigger; //Todo Make this an Interface
 
     public string GetName() { return name; }
+    public int SoundsCount() { return sounds.Count; }
+
+    public AudioClip GetClip() { return sounds[Random.Range(0, SoundsCount())]; }
 }
 
 [CreateAssetMenu(menuName = "CoreRunners/MusicData", fileName = "New Music Data.asset")]
@@ -25,6 +28,12 @@ public class MusicData : ScriptableObject
     [HideInInspector] public List<int> beats = new List<int>();
 
     public AudioClip GetTrack() { return musicTrack; }
+
+    public AudioClip GetRandomEventClip(int index)
+    {
+        return eventTypes[index].GetClip();
+    }
+
     public int GetEventTypesRange() { return eventTypes.Count; }
 
     public int GetBPM() { return bpm; }

@@ -3,6 +3,7 @@
 public class AudioOnTrigger : MonoBehaviour
 {
     public AudioSourceController controller;
+    [SerializeField] MusicTriggerReader musicTriggerReader;
     public AudioClip[] audioClips;
     public AudioSource source;
     [SerializeField] int next;
@@ -16,11 +17,32 @@ public class AudioOnTrigger : MonoBehaviour
 
         controller = FindObjectOfType<AudioSourceController>();
         source = controller.GetNextSource();
+
+        if (musicTriggerReader == null)
+            musicTriggerReader = FindObjectOfType<MusicTriggerReader>();
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        next = Random.Range(0, audioClips.Length - 1);
+        //TriggerAudio();
+        TriggerEventAudio();
+
+    }
+
+    void TriggerEventAudio()
+    {
+        var clipToPlay = musicTriggerReader.GetCurrentData().GetRandomEventClip(musicTriggerReader.GetEventFlag());
+        source = controller.GetNextSource();
+        source.spatialBlend = 0;
+        source.PlayOneShot(clipToPlay);
+
+        //   Debug.LogWarning("Played Trigger " + musicTriggerReader.GetCurrentData().GetEventFlagInfo(musicTriggerReader.GetEventFlag()));
+    }
+
+    private void TriggerAudio()
+    {
+        //next = Random.Range(0, audioClips.Length - 1);
         source = controller.GetNextSource();
         source.spatialBlend = 0;
         source.PlayOneShot(audioClips[next]);
