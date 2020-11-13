@@ -39,7 +39,7 @@ public class MusicTriggerReader : MonoBehaviour
     {
         if (currentBeat <= data.beats.Count - 1)
         {
-            Debug.Log("Beat Data# " + data.beats[currentBeat].ToString() + " and Current Beat is: " + currentBeat);
+            // Debug.Log("Beat Data# " + data.beats[currentBeat].ToString() + " and Current Beat is: " + currentBeat);
 
             currentBeat++;
         }
