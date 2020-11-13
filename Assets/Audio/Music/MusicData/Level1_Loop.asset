@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244efd602b8723546b74d9402648c727, type: 3}
+  m_Name: Level1_Loop
+  m_EditorClassIdentifier: 
+  musicTrack: {fileID: 8300000, guid: 54b5dbb10281c844f85004fd77dd8db2, type: 3}
+  bpm: 120
+  beatCountInTrack: 288
+  eventTypes:
+  - name: Db
+    eventIdentifier: 0
+    sounds:
+    - {fileID: 8300000, guid: 1c58894674afbc04caf16b0d89434d22, type: 3}
+    objectToTrigger: {fileID: 0}
+  - name: F
+    eventIdentifier: 1
+    sounds:
+    - {fileID: 8300000, guid: e445565df789d7549bd92c6da6acb046, type: 3}
+    objectToTrigger: {fileID: 0}
+  - name: Bb
+    eventIdentifier: 2
+    sounds:
+    - {fileID: 8300000, guid: 2dcfa59f51b36a04184178f03821f75d, type: 3}
+    objectToTrigger: {fileID: 0}
+  - name: Eb
+    eventIdentifier: 3
+    sounds:
+    - {fileID: 8300000, guid: 1631c1ac3d86aa94383fb3964ce7d434, type: 3}
+    objectToTrigger: {fileID: 0}
+  - name: G
+    eventIdentifier: 4
+    sounds:
+    - {fileID: 8300000, guid: c44fdfd7ab4e9154a89ec89e8bf9b0dc, type: 3}
+    objectToTrigger: {fileID: 0}
+  beats: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff

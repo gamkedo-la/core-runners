@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4855053444577508443}
   - component: {fileID: 1346347489614013591}
+  - component: {fileID: 9082050966491860229}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -51,3 +52,15 @@ MonoBehaviour:
   playIntro: 0
   bpm: 120
   lengthOfStartBars: 72
+--- !u!114 &9082050966491860229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681299625301340697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f5871a30a24944095c5304b217fe2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

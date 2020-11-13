@@ -22,10 +22,11 @@ public class MusicData : ScriptableObject
 
     [HideInInspector] public List<int> beats = new List<int>();
 
-    public int GetEventTypesRange()
-    {
-        return eventTypes.Count;
-    }
+    public AudioClip GetTrack() { return musicTrack; }
+    public int GetEventTypesRange() { return eventTypes.Count; }
+
+    public int GetBPM() { return bpm; }
+    public int GetTotalBeatCount() { return beatCountInTrack; }
 
     public void CreateBeatList()
     {

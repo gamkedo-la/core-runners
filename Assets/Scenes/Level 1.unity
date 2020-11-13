@@ -5664,6 +5664,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio
       objectReference: {fileID: 0}
+    - target: {fileID: 8886072272411899041, guid: b78953bd62871f446b6d11eb4da1c66c,
+        type: 3}
+      propertyPath: StartMusicData
+      value: 
+      objectReference: {fileID: 11400000, guid: 944f8f4004e806c4cbc1bcc4c6edd480,
+        type: 2}
+    - target: {fileID: 8886072272411899041, guid: b78953bd62871f446b6d11eb4da1c66c,
+        type: 3}
+      propertyPath: LoopMusicData
+      value: 
+      objectReference: {fileID: 11400000, guid: 20c7af4a315613e439dd47be62f8f37d,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b78953bd62871f446b6d11eb4da1c66c, type: 3}
 --- !u!1001 &6810457012430433083
