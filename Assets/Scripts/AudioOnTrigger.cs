@@ -16,7 +16,7 @@ public class AudioOnTrigger : MonoBehaviour
         //}
 
         controller = FindObjectOfType<AudioSourceController>();
-        source = controller.GetNextSource();
+        //  source = controller.GetNextSource();
 
         if (musicTriggerReader == null)
             musicTriggerReader = FindObjectOfType<MusicTriggerReader>();
@@ -37,7 +37,7 @@ public class AudioOnTrigger : MonoBehaviour
         source.spatialBlend = 0;
         source.PlayOneShot(clipToPlay);
 
-        //   Debug.LogWarning("Played Trigger " + musicTriggerReader.GetCurrentData().GetEventFlagInfo(musicTriggerReader.GetEventFlag()));
+        Debug.LogWarning("Played Trigger " + musicTriggerReader.GetCurrentData().GetEventFlagInfo(musicTriggerReader.GetEventFlag()));
     }
 
     private void TriggerAudio()
