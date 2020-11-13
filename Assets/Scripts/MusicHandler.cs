@@ -67,6 +67,8 @@ public class MusicHandler : MonoBehaviour
             nextStartTime += 60.0f / bpm * (lengthOfStartBars * 4);
             //if (AudioSettings.dspTime == nextStartTime)
             musicTriggerReader.SetMusicData(StartMusicData);
+
+
         }
 
         var loopMusic = GetNextSource();
@@ -75,15 +77,14 @@ public class MusicHandler : MonoBehaviour
         loopMusic.PlayScheduled(nextStartTime);
         //if (AudioSettings.dspTime == nextStartTime)
         //    musicTriggerReader.SetMusicData(LoopMusicData);
-        StartCoroutine(ScheduleTriggerReader(nextStartTime, LoopMusicData));
+        StartCoroutine(ScheduleTriggerReader((60f / bpm * 288), LoopMusicData)); // TODO fix calculation of trigger time
     }
-    public IEnumerator ScheduleTriggerReader(double waitTime, MusicData data)
+    public IEnumerator ScheduleTriggerReader(float waitTime, MusicData data)
     {
         Debug.Log("Entered Trigger Schedule");
         // yield return new WaitUntil(() => { return triggerSource.isPlaying; });
         yield return new WaitForSecondsRealtime((float)waitTime);
-        musicTriggerReader.CancelInvoke("ReadBeat");
-        musicTriggerReader.ResetBeatCount();
+        musicTriggerReader.StopBeatCount();
         musicTriggerReader.SetMusicData(data);
         Debug.Log("Exit Trigger Schedule");
     }

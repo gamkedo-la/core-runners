@@ -24,15 +24,21 @@ public class MusicTriggerReader : MonoBehaviour
 
     public void SetMusicData(MusicData data)
     {
-        if (startReading)
-            CancelInvoke("ReadBeat");
-
         this.data = data;
         beatsPerSecond = data.GetBPM() / 60f;
         secondsPerBeat = 60f / data.GetBPM();
         startReading = true;
         InvokeRepeating("ReadBeat", 0f, secondsPerBeat);
+    }
 
+    public void StopBeatCount()
+    {
+        if (startReading)
+        {
+            CancelInvoke("ReadBeat");
+            ResetBeatCount();
+            startReading = false;
+        }
     }
 
     void ReadBeat()
@@ -43,10 +49,10 @@ public class MusicTriggerReader : MonoBehaviour
 
             currentBeat++;
         }
-        //else
-        //{
-        //    ResetBeatCount();
-        //}
+        else
+        {
+            ResetBeatCount();
+        }
     }
 
     public void ResetBeatCount()
