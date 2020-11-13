@@ -28,6 +28,9 @@ public class MusicDataEditor : Editor
         {
             if (GUILayout.Button("Reset Beats", EditorStyles.miniButton))
                 data.CreateBeatList();
+
+            if (GUILayout.Button("Trim Beat List", EditorStyles.miniButton))
+                data.TrimBeats();
         }
 
         displayData = EditorGUILayout.Foldout(displayData, "Display Beats");
