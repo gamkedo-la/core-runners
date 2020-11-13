@@ -22,7 +22,7 @@ public class MusicHandler : MonoBehaviour
     public int lengthOfStartBars;
 
     private double nextStartTime;
-
+    private float triggerDelay;
     [SerializeField] MusicTriggerReader musicTriggerReader;
 
     private void Awake()
@@ -57,6 +57,7 @@ public class MusicHandler : MonoBehaviour
     void Start()
     {
         nextStartTime = AudioSettings.dspTime + 1f;
+        triggerDelay = 0f;
 
         if (playIntro)
         {
@@ -64,11 +65,10 @@ public class MusicHandler : MonoBehaviour
             startMusic.clip = StartMusicData.GetTrack();
             startMusic.PlayScheduled(nextStartTime);
 
-            nextStartTime += 60.0f / bpm * (lengthOfStartBars * 4);
+            nextStartTime += (double)GetTimeOfIntro();
             //if (AudioSettings.dspTime == nextStartTime)
             musicTriggerReader.SetMusicData(StartMusicData);
-
-
+            triggerDelay = GetTimeOfIntro();
         }
 
         var loopMusic = GetNextSource();
@@ -77,8 +77,14 @@ public class MusicHandler : MonoBehaviour
         loopMusic.PlayScheduled(nextStartTime);
         //if (AudioSettings.dspTime == nextStartTime)
         //    musicTriggerReader.SetMusicData(LoopMusicData);
-        StartCoroutine(ScheduleTriggerReader((60f / bpm * 288), LoopMusicData)); // TODO fix calculation of trigger time
+        StartCoroutine(ScheduleTriggerReader(triggerDelay, LoopMusicData)); // TODO fix calculation of trigger time
     }
+
+    private float GetTimeOfIntro()
+    {
+        return triggerDelay = 60.0f / bpm * (lengthOfStartBars * 4);
+    }
+
     public IEnumerator ScheduleTriggerReader(float waitTime, MusicData data)
     {
         Debug.Log("Entered Trigger Schedule");
