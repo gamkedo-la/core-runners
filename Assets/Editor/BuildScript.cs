@@ -40,7 +40,7 @@ public class BuildScript : MonoBehaviour
     public static void PCBuild()
     {
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-        buildPlayerOptions.scenes = new[] { "Assets/Scenes/MainScene.unity"};
+        buildPlayerOptions.scenes = new[] { "Assets/Scenes/Level 1.unity"};
         buildPlayerOptions.locationPathName = "Build//pcbuild/Core Runners.exe";
         buildPlayerOptions.target = BuildTarget.StandaloneWindows;
         buildPlayerOptions.options = BuildOptions.None;
@@ -63,7 +63,7 @@ public class BuildScript : MonoBehaviour
     public static void WebGLBuild()
     {
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-        buildPlayerOptions.scenes = new[] { "Assets/Scenes/MainScene.unity"};
+        buildPlayerOptions.scenes = new[] { "Assets/Scenes/Level 1.unity"};
         buildPlayerOptions.locationPathName = "Build//webgl/";
         buildPlayerOptions.target = BuildTarget.WebGL;
         buildPlayerOptions.options = BuildOptions.None;
