@@ -75,6 +75,8 @@ public class MusicHandler : MonoBehaviour
         loopMusic.clip = LoopMusicData.GetTrack();
         loopMusic.loop = true;
         loopMusic.PlayScheduled(nextStartTime);
+        triggerDelay = (float)(nextStartTime - AudioSettings.dspTime);
+        //Debug.Log("delay time: " + triggerDelay);
         //if (AudioSettings.dspTime == nextStartTime)
         //    musicTriggerReader.SetMusicData(LoopMusicData);
         StartCoroutine(ScheduleTriggerReader(triggerDelay, LoopMusicData)); // TODO fix calculation of trigger time so it starts in sync, currently off by 1 beat
