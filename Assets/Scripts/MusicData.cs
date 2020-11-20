@@ -7,12 +7,14 @@ public class MusicEvent
     [SerializeField] string name;
     [SerializeField] int eventIdentifier;
     [SerializeField] List<AudioClip> sounds;
-    [SerializeField] GameObject objectToTrigger; //Todo Make this an Interface
+    [SerializeField] AudioTriggerObject objectToTrigger; //Todo Make this an Interface
 
     public string GetName() { return name; }
     public int SoundsCount() { return sounds.Count; }
 
     public AudioClip GetClip() { return sounds[Random.Range(0, SoundsCount())]; }
+
+    public AudioTriggerObject GetTriggers() { return objectToTrigger; }
 }
 
 [CreateAssetMenu(menuName = "CoreRunners/MusicData", fileName = "New Music Data.asset")]
@@ -34,6 +36,7 @@ public class MusicData : ScriptableObject
         return eventTypes[index].GetClip();
     }
 
+    public MusicEvent GetEvent(int index) { return eventTypes[index]; }
     public int GetEventTypesRange() { return eventTypes.Count; }
 
     public int GetBPM() { return bpm; }

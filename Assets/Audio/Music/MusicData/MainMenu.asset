@@ -19,9 +19,11 @@ MonoBehaviour:
   - name: Bb
     eventIdentifier: 0
     sounds: []
-    objectToTrigger: {fileID: 0}
+    objectToTrigger: {fileID: 5714843065831462156, guid: f3eb79f57270c96419ea94f3b05752d8,
+      type: 3}
   - name: F
     eventIdentifier: 1
     sounds: []
-    objectToTrigger: {fileID: 0}
+    objectToTrigger: {fileID: 3092486720291649381, guid: 367bc01d52bae9b42885c8107f30596c,
+      type: 3}
   beats: 00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff01000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff

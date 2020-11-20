@@ -11,6 +11,8 @@ public class MusicTriggerReader : MonoBehaviour
     public bool startReading;
 
     [SerializeField] int eventFlag;
+
+    [SerializeField] AudioSourceController controller;
     void Start()
     {
         //beatsPerSecond = data.GetBPM() / 60f;
@@ -74,5 +76,17 @@ public class MusicTriggerReader : MonoBehaviour
     public void ResetBeatCount()
     {
         currentBeat = 0;
+    }
+
+    public void PlayCurrentTriggerOne()
+    {
+        controller = GetComponent<AudioSourceController>();
+        data.GetEvent(eventFlag).GetTriggers().PlayTriggerOne(controller.GetNextSource());
+    }
+
+    public void PlayCurrentTriggerTwo()
+    {
+        controller = GetComponent<AudioSourceController>();
+        data.GetEvent(eventFlag).GetTriggers().PlayTriggerTwo(controller.GetNextSource());
     }
 }
