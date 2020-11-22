@@ -56,6 +56,7 @@ MonoBehaviour:
   bpm: 120
   lengthOfStartBars: 72
   musicTriggerReader: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: d69adfa7998aaf544a80c8b3739fabb9, type: 2}
 --- !u!114 &9082050966491860229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,3 +73,4 @@ MonoBehaviour:
   currentBeat: 0
   startReading: 0
   eventFlag: 0
+  controller: {fileID: 0}

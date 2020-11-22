@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1006302084172649523, guid: 671fae70d5b0e874d8507b541213f8aa,
+        type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24300002, guid: d69adfa7998aaf544a80c8b3739fabb9,
+        type: 2}
     - target: {fileID: 3275829861861318700, guid: 671fae70d5b0e874d8507b541213f8aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 4592295840976280482, guid: 671fae70d5b0e874d8507b541213f8aa,
         type: 3}
       propertyPath: m_Name
-      value: BbTriggers
+      value: BbTriggers Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6621916495850372386, guid: 671fae70d5b0e874d8507b541213f8aa,
         type: 3}

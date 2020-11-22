@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioSourceController : MonoBehaviour
 {
+    [SerializeField] AudioMixerGroup audioMixer;
     [SerializeField] AudioSource[] sources;
     [SerializeField] int sourcesToCreate;
     int nextSourceIndex = 0;
@@ -17,6 +19,7 @@ public class AudioSourceController : MonoBehaviour
         for (int i = 0; i < sourcesToCreate; i++)
         {
             sources[i] = gameObject.AddComponent<AudioSource>();
+            sources[i].outputAudioMixerGroup = audioMixer;
         }
     }
 

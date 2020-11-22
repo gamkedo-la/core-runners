@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MusicHandler : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class MusicHandler : MonoBehaviour
     private float triggerDelay;
     [SerializeField] MusicTriggerReader musicTriggerReader;
 
+    [SerializeField] AudioMixerGroup audioMixer;
+
     private void Awake()
     {
         if (StartMusic != null)
@@ -45,6 +48,7 @@ public class MusicHandler : MonoBehaviour
         for (int i = 0; i < sourcesToCreate; i++)
         {
             sources[i] = gameObject.AddComponent<AudioSource>();
+            sources[i].outputAudioMixerGroup = audioMixer;
         }
     }
 
