@@ -27,11 +27,12 @@ public class triggeranimation : MonoBehaviour
     meteorite1.SetActive(true);
     } else 
     if (rand <=3){
-    anim2.SetTrigger("triggercollapse");
-    col2.enabled = true;
+     col2.enabled = true;
+    
      meteorite2.SetActive(true);
+     StartCoroutine(Bridgecollapse());
     StartCoroutine(Dustcollapse());
-
+    StartCoroutine(meteroritedestroy());
 
     } else
     anim3.SetTrigger("triggercollapse");
@@ -41,8 +42,21 @@ public class triggeranimation : MonoBehaviour
 
     IEnumerator Dustcollapse()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.5f);
         Dustcollapse2.SetActive(true);
     }
 
+    IEnumerator Bridgecollapse()
+    {
+        yield return new WaitForSeconds(1f);
+       
+        anim2.SetTrigger("triggercollapse");
+    }
+
+    IEnumerator meteroritedestroy()
+    {
+        yield return new WaitForSeconds(0.6f);
+       meteorite2.SetActive(false);
+        
+    }
 }
