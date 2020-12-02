@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 public class RacerMovement : MonoBehaviour
 {
@@ -113,5 +114,17 @@ public class RacerMovement : MonoBehaviour
             camera.SetBool("outOfBoost", true);
             canBoost = false;
         }
+
+        if (racer.velocity.magnitude < 0.1) {
+            StartCoroutine(Checkstuck());
+        }
+
     }
+    IEnumerator Checkstuck()
+        {
+            yield return new WaitForSeconds(3.0f);
+            RacerMovement.currentBoostValue = 5.0f;
+            SceneManager.LoadScene(1);
+        }
+
 }
