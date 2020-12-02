@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class destroyrunner : MonoBehaviour
 {
     
-    public GameObject racerobject;
-    public GameObject teleportexit;
+    //public GameObject racerobject;
+    //public GameObject teleportexit;
      private void OnTriggerEnter(Collider other)
     {
     //racerobject.transform.position = teleportexit.transform.position ;
