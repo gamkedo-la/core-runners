@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateObject : MonoBehaviour
 {
-    public int BoostIncrease = 5;
+    public int BoostIncrease = 2;
     public float rotationSpeed;
     void Update()
     {
@@ -16,7 +16,11 @@ public class RotateObject : MonoBehaviour
         if (other.tag == "Racer")
         {
             print("Contact");
+            if (RacerMovement.currentBoostValue <10)
             RacerMovement.currentBoostValue += BoostIncrease;
+            if (RacerMovement.currentBoostValue >10){
+                RacerMovement.currentBoostValue = 10;
+            }
             Destroy(this.gameObject);
         }
     }
