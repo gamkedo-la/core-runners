@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class destroyrunner : MonoBehaviour
 {
-    
+
     //public GameObject racerobject;
     //public GameObject teleportexit;
-     private void OnTriggerEnter(Collider other)
+
+    public AudioAsyncObject audioToPlay;
+
+    private void OnTriggerEnter(Collider other)
     {
-    //racerobject.transform.position = teleportexit.transform.position ;
-    RacerMovement.currentBoostValue = 5.0f;
-    SceneManager.LoadScene(1);
+        //racerobject.transform.position = teleportexit.transform.position ;
+        if (audioToPlay != null)
+            audioToPlay.PlayAudioBeforeDestroy();
+        RacerMovement.currentBoostValue = 5.0f;
+        SceneManager.LoadScene(1);
     }
 
 }

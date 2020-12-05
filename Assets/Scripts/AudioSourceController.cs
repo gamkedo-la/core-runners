@@ -11,7 +11,8 @@ public class AudioSourceController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CreateAudioSourceArray();
+        if (sources.Length < 1)
+            CreateAudioSourceArray();
     }
     void CreateAudioSourceArray()
     {
@@ -25,9 +26,12 @@ public class AudioSourceController : MonoBehaviour
 
     public AudioSource GetNextSource()
     {
-        nextSourceIndex = (nextSourceIndex + 1) % sourcesToCreate;
+        nextSourceIndex = (nextSourceIndex + 1) % sources.Length;
         return sources[nextSourceIndex];
     }
 
-
+    public AudioSource[] GetSources()
+    {
+        return sources;
+    }
 }
